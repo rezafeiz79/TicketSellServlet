@@ -13,7 +13,7 @@ public class Trip {
     String destinationCity;
     LocalTime moveTime;
     LocalDate moveDate;
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     Set<Ticket> soldTickets;
 
     public Trip(Integer id, String originCity, String destinationCity, LocalTime moveTime, LocalDate moveDate, Set<Ticket> availableTickets) {
