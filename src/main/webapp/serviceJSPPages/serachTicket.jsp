@@ -7,10 +7,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-
-</body>
+    <head>
+        <title>Serch Tickets</title>
+    </head>
+    <body>
+        <form action="SearchTicket" method="post">
+            Origin City:<input type="text" name="originCity"><br>
+            Destination City:<input type="text" name="destinationCity"><br>
+            Date:<input type="date" name="date"><br>
+            Time:<input type="time" name="time"><br>
+        </form>
+    </body>
 </html>
