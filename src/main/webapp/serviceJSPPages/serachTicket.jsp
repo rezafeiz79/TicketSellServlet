@@ -15,7 +15,6 @@
             Origin City:<input type="text" name="originCity"><br>
             Destination City:<input type="text" name="destinationCity"><br>
             Date:<input type="date" name="date"><br>
-            Time:<input type="time" name="time"><br>
         </form>
     </body>
 </html>
