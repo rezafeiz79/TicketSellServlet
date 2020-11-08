@@ -14,7 +14,7 @@ public class Trip {
     LocalTime moveTime;
     LocalDate moveDate;
     @OneToMany
-    Set<Ticket> availableTickets;
+    Set<Ticket> soldTickets;
 
     public Trip(Integer id, String originCity, String destinationCity, LocalTime moveTime, LocalDate moveDate, Set<Ticket> availableTickets) {
         this.id = id;
@@ -22,7 +22,7 @@ public class Trip {
         this.destinationCity = destinationCity;
         this.moveTime = moveTime;
         this.moveDate = moveDate;
-        this.availableTickets = availableTickets;
+        this.soldTickets = availableTickets;
     }
 
     public Trip() { }
@@ -67,12 +67,12 @@ public class Trip {
         this.moveDate = moveDate;
     }
 
-    public Set<Ticket> getAvailableTickets() {
-        return availableTickets;
+    public Set<Ticket> getSoldTickets() {
+        return soldTickets;
     }
 
-    public void setAvailableTickets(Set<Ticket> availableTickets) {
-        this.availableTickets = availableTickets;
+    public void setSoldTickets(Set<Ticket> availableTickets) {
+        this.soldTickets = availableTickets;
     }
 }
 
