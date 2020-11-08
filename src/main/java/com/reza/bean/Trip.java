@@ -1,11 +1,9 @@
 package com.reza.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Set;
 
 @Entity
 public class Trip {
@@ -15,13 +13,16 @@ public class Trip {
     String destinationCity;
     LocalTime moveTime;
     LocalDate moveDate;
+    @OneToMany
+    Set<Ticket> availableTickets;
 
-    public Trip(Integer id, String originCity, String destinationCity, LocalTime moveTime, LocalDate moveDate) {
+    public Trip(Integer id, String originCity, String destinationCity, LocalTime moveTime, LocalDate moveDate, Set<Ticket> availableTickets) {
         this.id = id;
         this.originCity = originCity;
         this.destinationCity = destinationCity;
         this.moveTime = moveTime;
         this.moveDate = moveDate;
+        this.availableTickets = availableTickets;
     }
 
     public Trip() { }
@@ -64,6 +65,14 @@ public class Trip {
 
     public void setMoveDate(LocalDate moveDate) {
         this.moveDate = moveDate;
+    }
+
+    public Set<Ticket> getAvailableTickets() {
+        return availableTickets;
+    }
+
+    public void setAvailableTickets(Set<Ticket> availableTickets) {
+        this.availableTickets = availableTickets;
     }
 }
 
