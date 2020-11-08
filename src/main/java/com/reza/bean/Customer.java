@@ -1,9 +1,7 @@
 package com.reza.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Customer {
@@ -13,13 +11,16 @@ public class Customer {
     String gender;
     String username;
     String password;
+    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    Set<Ticket> tickets;
 
-    public Customer(Integer id, String name, String gender, String username, String password) {
+    public Customer(Integer id, String name, String gender, String username, String password, Set<Ticket> tickets) {
         this.id = id;
         this.name = name;
         this.gender = gender;
         this.username = username;
         this.password = password;
+        this.tickets = tickets;
     }
 
     public Customer() { }
@@ -62,5 +63,13 @@ public class Customer {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Set<Ticket> getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(Set<Ticket> tickets) {
+        this.tickets = tickets;
     }
 }
