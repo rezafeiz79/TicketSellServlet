@@ -7,10 +7,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-
-</body>
+    <head>
+        <title>Welcome To TicketSell App</title>
+    </head>
+    <body>
+        <h2><a href="login.jsp">Login</a></h2>
+        <h2><a href="signup.jsp">SignUp</a></h2>
+    </body>
 </html>
