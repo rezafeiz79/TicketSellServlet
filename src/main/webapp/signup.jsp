@@ -11,7 +11,7 @@
         <title>Sign Up</title>
     </head>
     <body>
-        <form action="SignUp">
+        <form action="SignUp" method="post">
             Name:<input type="text" name="name"/><br/>
             Gender:<input type="text" name="gender"/><br/>
             Username:<input type="text" name="username"/><br/>
