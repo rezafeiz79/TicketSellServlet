@@ -16,5 +16,7 @@
             Password:<input type="password" name="password"/><br/>
             <input type="submit" value="Login">
         </form>
+        <% String name = (String)request.getAttribute("LoginFailedMessage"); %>
+        <%= name %>
     </body>
 </html>

@@ -4,6 +4,24 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <servlet>
+        <servlet-name>SignUp</servlet-name>
+        <servlet-class>com.reza.servlet.SignUp</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignUp</servlet-name>
+        <url-pattern>/SignUp</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SearchTicket</servlet-name>
+        <servlet-class>com.reza.servlet.SearchTicket</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchTicket</servlet-name>
+        <url-pattern>/serviceJSPPages/SearchTicket</url-pattern>
+    </servlet-mapping>
+    
     <filter>
         <filter-name>Authentication</filter-name>
         <filter-class>com.reza.filter.Authentication</filter-class>

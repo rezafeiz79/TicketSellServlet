@@ -15,6 +15,7 @@
             Origin City:<input type="text" name="originCity"><br>
             Destination City:<input type="text" name="destinationCity"><br>
             Date:<input type="date" name="date"><br>
+            <input type="submit" value="Serach">
         </form>
     </body>
 </html>
