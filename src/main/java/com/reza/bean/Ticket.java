@@ -6,9 +6,9 @@ import javax.persistence.*;
 public class Ticket {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REFRESH)
     Trip trip;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REFRESH)
     Customer customer;
 
     public Ticket(Integer id, Trip trip, Customer customer) {
