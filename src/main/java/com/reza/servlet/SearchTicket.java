@@ -29,9 +29,13 @@ public class SearchTicket extends HttpServlet {
                 resultTickets.add(i);
             }
         }
-        resultTickets.sort(Comparator.comparing((Ticket t) -> t.getTrip().getMoveTime()));
-        req.setAttribute("resultList", resultTickets);
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("serviceJSPPages/ticketList.jsp");
-        requestDispatcher.forward(req, resp);
+        if (!resultTickets.isEmpty()) {
+            resultTickets.sort(Comparator.comparing((Ticket t) -> t.getTrip().getMoveTime()));
+            req.setAttribute("resultList", resultTickets);
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("ticketList.jsp");
+            requestDispatcher.forward(req, resp);
+        } else {
+            resp.sendRedirect("searchTicket.jsp");
+        }
     }
 }
