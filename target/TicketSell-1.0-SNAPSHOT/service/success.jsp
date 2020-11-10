@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.reza.bean.Customer" %>
+<%@ page import="com.reza.bean.Ticket" %><%--
   Created by IntelliJ IDEA.
   User: reza
   Date: 11/8/2020
@@ -11,6 +12,16 @@
         <title>Success</title>
     </head>
     <body>
+        <%
+            String prefix = "";
+            if (((Customer)request.getSession().getAttribute("customer")).getGender().equals("male")) {
+                prefix = "Mister ";
+            } else if (((Customer)request.getSession().getAttribute("customer")).getGender().equals("female")) {
+                prefix = "Ms ";
+            }
+        %>
         <h1>Success</h1>
+        <p><%= prefix + ((Customer)request.getSession().getAttribute("customer")).getName() %></p>
+        <p><%= ((Ticket)request.getAttribute("ticket")).getId() %></p>
     </body>
 </html>

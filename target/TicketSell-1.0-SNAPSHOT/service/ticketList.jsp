@@ -12,7 +12,7 @@
         <title>Tickets List</title>
     </head>
     <body>
-        <table style="width:100%">
+        <table>
             <tr>
                 <th><%= ((List<Trip>)request.getAttribute("resultList")).get(0).getOriginCity() + " - " + ((List<Trip>)request.getAttribute("resultList")).get(0).getDestinationCity() %></th>
                 <th>Date: <%= ((List<Trip>)request.getAttribute("resultList")).get(0).getMoveDate() %></th>
@@ -24,9 +24,9 @@
             </tr>
             <% for (Trip i : (List<Trip>)request.getAttribute("resultList")) { %>
                 <tr>
-                    <th><a href="<%= "./service/BuyTicket?tripId=" + i.getId() %>">Buy</a></th>
-                    <th><%= i.getMoveTime() %></th>
-                    <th><%= i.getId() %></th>
+                    <td><a href="<%= "BuyTicket?tripId=" + i.getId() %>">Buy</a></td>
+                    <td><%= i.getMoveTime() %></td>
+                    <td><%= i.getId() %></td>
                 </tr>
             <% } %>
         </table>

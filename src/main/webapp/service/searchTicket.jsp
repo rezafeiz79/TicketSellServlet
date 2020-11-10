@@ -18,5 +18,6 @@
             <input type="submit" value="Serach">
         </form>
         <h1><a href="MyTickets">MyTickets</a></h1>
+        <h1><a href="Logout">Logout</a></h1>
     </body>
 </html>

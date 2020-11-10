@@ -21,6 +21,51 @@
         <servlet-name>SearchTicket</servlet-name>
         <url-pattern>/service/SearchTicket</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BuyTicket</servlet-name>
+        <servlet-class>com.reza.servlet.BuyTicket</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BuyTicket</servlet-name>
+        <url-pattern>/service/BuyTicket</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteTicket</servlet-name>
+        <servlet-class>com.reza.servlet.DeleteTicket</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteTicket</servlet-name>
+        <url-pattern>/service/DeleteTicket</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MyTickets</servlet-name>
+        <servlet-class>com.reza.servlet.MyTickets</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyTickets</servlet-name>
+        <url-pattern>/service/MyTickets</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TicketDetail</servlet-name>
+        <servlet-class>com.reza.servlet.TicketDetail</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TicketDetail</servlet-name>
+        <url-pattern>/service/TicketDetail</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>com.reza.servlet.Logout</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/service/Logout</url-pattern>
+    </servlet-mapping>
     
     <filter>
         <filter-name>Authentication</filter-name>

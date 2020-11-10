@@ -16,6 +16,10 @@ public class DeleteTicket extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Session session = DatabaseUtil.getSessionFactory().openSession();
         Ticket ticket = DatabaseUtil.getEntityById(session, Integer.parseInt(req.getParameter("ticketId")), Ticket.class);
+        ticket.getCustomer().getTickets().remove(ticket);
+        ticket.getTrip().getSoldTickets().remove(ticket);
+        DatabaseUtil.updateEntity(session, ticket.getCustomer());
+        DatabaseUtil.updateEntity(session, ticket.getTrip());
         DatabaseUtil.deleteEntity(session, ticket);
         req.setAttribute("ticket", ticket);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("success.jsp");

@@ -28,7 +28,7 @@ public class MyTickets extends HttpServlet {
                 resultList.add(i);
             }
         }
-        if (resultList.isEmpty()) {
+        if (!resultList.isEmpty()) {
             resultList.sort(Comparator.comparing((Ticket t) -> t.getTrip().getMoveDate()));
             req.setAttribute("resultList", resultList);
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("myTickets.jsp");
