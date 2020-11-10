@@ -14,14 +14,14 @@
     <body>
         <%
             String prefix = "";
-            if (((Customer)request.getAttribute("customer")).getGender().equals("male")) {
+            if (((Customer)request.getSession().getAttribute("customer")).getGender().equals("male")) {
                 prefix = "Mister ";
-            } else if (((Customer)request.getAttribute("customer")).getGender().equals("female")) {
+            } else if (((Customer)request.getSession().getAttribute("customer")).getGender().equals("female")) {
                 prefix = "Ms ";
             }
         %>
         <h1>Success</h1>
-        <p><%= prefix + ((Customer)request.getAttribute("customer")).getName() %></p>
+        <p><%= prefix + ((Customer)request.getSession().getAttribute("customer")).getName() %></p>
         <p><%= ((Ticket)request.getAttribute("ticket")).getId() %></p>
     </body>
 </html>
