@@ -24,7 +24,7 @@
         </tr>
         <% for (Ticket i : (List<Ticket>)request.getAttribute("resultList")) { %>
         <tr>
-            <td><a href="<%= "service/TicketDetail?ticketId=" + i.getId() %>">Show</a></td>
+            <td><a href="<%= "TicketDetail?ticketId=" + i.getId() %>">Show</a></td>
             <td><%= i.getId() %></td>
             <td><%= i.getTrip().getMoveDate() %></td>
         </tr>

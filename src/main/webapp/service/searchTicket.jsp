@@ -17,5 +17,6 @@
             Date:<input type="date" name="date"><br>
             <input type="submit" value="Serach">
         </form>
+        <h1><a href="MyTickets">MyTickets</a></h1>
     </body>
 </html>

@@ -48,7 +48,7 @@
                 <td><%= ((Ticket)request.getAttribute("ticket")).getTrip().getId() %></td>
             </tr>
             <tr>
-                <td><a href=<%= "service/DeleteTicket?ticketId=" + ((Ticket)request.getAttribute("ticket")).getTrip().getId() %>>Delete Ticket</a></td>
+                <td><a href=<%= "DeleteTicket?ticketId=" + ((Ticket)request.getAttribute("ticket")).getTrip().getId() %>>Delete Ticket</a></td>
             </tr>
         </table>
     </body>
