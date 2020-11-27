@@ -20,7 +20,9 @@ public class Authentication implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        if (((HttpServletRequest)servletRequest).getSession(true).getAttribute("customer") == null) {
+        if (((HttpServletRequest)servletRequest).getSession(false) == null) {
+            ((HttpServletResponse)servletResponse).sendRedirect("../login.jsp");
+        } else if (((HttpServletRequest)servletRequest).getSession(true).getAttribute("customer") == null) {
             Session session = DatabaseUtil.getSessionFactory().openSession();
             Set<Customer> customers = DatabaseUtil.getAllEntities(session, Customer.class);
             String username = "";
